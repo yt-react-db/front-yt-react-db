@@ -1,11 +1,11 @@
 import './App.css'
-import SignInGoogleButton from './SignInGoogleButton'
+import AuthorizationCodeFlow from './AuthorizationCode';
 
 function App() {
 
   return (
     <>
-      <SignInGoogleButton />
+      <AuthorizationCodeFlow />
     </>
   )
 }
