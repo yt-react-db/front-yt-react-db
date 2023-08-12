@@ -37,6 +37,9 @@ pnpm i @react-oauth/google
 
 check this: <https://ui.shadcn.com/docs/components/data-table>
 
+
 ## useful
 
 * <https://blog.logrocket.com/guide-adding-google-login-react-app/>
+* <https://ui.shadcn.com/> UI
+* icons: <https://lucide.dev/icons/>
