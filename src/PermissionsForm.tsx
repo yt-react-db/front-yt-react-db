@@ -31,11 +31,11 @@ const DelayUnitEnum = z.enum(["h", "d", "w", "m", "y"]); // hours, days, weeks..
 
 const formSchema = z.object({
     can_react_live: PermissionsEnum,
-    live_reaction_delay_value: z.nullable(z.number().min(1).max(999)),
+    live_reaction_delay_value: z.nullable(z.coerce.number().min(1).max(999)),
     live_reaction_delay_unit: z.nullable(DelayUnitEnum),
 
     can_upload_reaction: PermissionsEnum,
-    upload_reaction_delay_value: z.nullable(z.number().min(1).max(999)),
+    upload_reaction_delay_value: z.nullable(z.coerce.number().min(1).max(999)),
     upload_reaction_delay_unit: z.nullable(DelayUnitEnum),
 })
 
@@ -78,7 +78,6 @@ export default function PermissionsForm({ channelInfo, setStep }: props) {
         setStep(4);
         setLeState(2);
         try {
-
             const res = await fetch("http://localhost:8080/set_permissions", {
                 method: "POST",
                 headers: {
@@ -138,7 +137,7 @@ export default function PermissionsForm({ channelInfo, setStep }: props) {
 
                                 <FormItem className="inline">
                                     <FormLabel>Delay</FormLabel>
-                                    <Input type="number" min="1" max="999" defaultValue={field.value ?? 1} />
+                                    <Input type="number" min="1" max="999" onChange={field.onChange} defaultValue={field.value ?? 1} />
                                     <FormMessage />
                                 </FormItem>
                             )}
@@ -152,7 +151,7 @@ export default function PermissionsForm({ channelInfo, setStep }: props) {
                                     <Select onValueChange={field.onChange} defaultValue={field.value ?? 'd'}>
                                         <FormControl>
                                             <SelectTrigger>
-                                                <SelectValue placeholder="Select a verified email to display" />
+                                                <SelectValue placeholder="delay unit" />
                                             </SelectTrigger>
                                         </FormControl>
                                         <SelectContent>
@@ -206,21 +205,21 @@ export default function PermissionsForm({ channelInfo, setStep }: props) {
 
                                 <FormItem className="inline">
                                     <FormLabel>Delay</FormLabel>
-                                    <Input type="number" min="1" max="999" defaultValue={field.value ?? 1} />
+                                    <Input type="number" min="1" max="999" onChange={field.onChange} defaultValue={field.value ?? 1} />
                                     <FormMessage />
                                 </FormItem>
                             )}
                         />
                         <FormField
                             control={form.control}
-                            name="live_reaction_delay_unit"
+                            name="upload_reaction_delay_unit"
                             render={({ field }) => (
                                 <FormItem className="inline">
                                     <FormLabel>unit</FormLabel>
                                     <Select onValueChange={field.onChange} defaultValue={field.value ?? 'd'}>
                                         <FormControl>
                                             <SelectTrigger>
-                                                <SelectValue placeholder="Select a verified email to display" />
+                                                <SelectValue placeholder="delay unit" />
                                             </SelectTrigger>
                                         </FormControl>
                                         <SelectContent>
