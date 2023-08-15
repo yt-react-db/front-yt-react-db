@@ -6,16 +6,59 @@ import { GoogleOAuthProvider } from '@react-oauth/google'
 import {
   QueryClient,
   QueryClientProvider,
-  useQuery,
 } from '@tanstack/react-query'
+import { ThemeProvider } from './components/theme-provider';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import AuthorizationCodeFlow from './components/AuthorizationCode.tsx'
+import About from './components/About.tsx'
+import Root from './components/Root.tsx'
 
 const queryClient = new QueryClient()
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+    children: [
+      {
+        path: "/",
+        element: <App />,
+
+      },
+      {
+        path: "/set_permissions_flow",
+        element: <AuthorizationCodeFlow />
+      },
+      {
+        path: "/about",
+        element: <About />
+      },
+      {
+        path: "/set_permissions_flow",
+        element: <AuthorizationCodeFlow />
+      },
+      {
+        path: "/set_permissions_flow",
+        element: <AuthorizationCodeFlow />
+      }
+    ]
+  },
+
+
+
+
+])
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <GoogleOAuthProvider clientId="464467440760-esn45nbi5mg2krjgjipanshoquqlqg0m.apps.googleusercontent.com">
     <React.StrictMode>
       <QueryClientProvider client={queryClient}>
-        <App />
+        <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
+          <RouterProvider router={router} />
+        </ThemeProvider>
       </QueryClientProvider>
     </React.StrictMode>
   </GoogleOAuthProvider>

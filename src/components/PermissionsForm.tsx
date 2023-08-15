@@ -20,9 +20,9 @@ import {
 } from "@/components/ui/form"
 import { Check, XCircle } from "lucide-react";
 import { ReloadIcon } from "@radix-ui/react-icons"
-import { Button } from "./components/ui/button";
-import { Input } from "./components/ui/input";
-import { Separator } from "./components/ui/separator";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
+import { Separator } from "./ui/separator";
 import { useState } from "react";
 
 

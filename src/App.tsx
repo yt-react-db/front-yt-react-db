@@ -1,17 +1,14 @@
 import './App.css'
-import AuthorizationCodeFlow from './AuthorizationCode';
-import PermissionsTable from './PermissionsTable/PermissionsTable';
-import { ModeToggle } from './components/mode-toggle';
-import { ThemeProvider } from './components/theme-provider';
+import Header from './components/Header';
+import PermissionsTable from './components/PermissionsTable/PermissionsTable';
 
 function App() {
 
   return (
-    <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
-      <ModeToggle />
+    <>
+      <Header />
       <PermissionsTable />
-      <AuthorizationCodeFlow />
-    </ThemeProvider>
+    </>
   )
 }
 

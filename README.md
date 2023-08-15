@@ -1,3 +1,27 @@
+# README
+
+TODO: write readme
+
+![scuff_logo](./public/logo.png)
+
+to run: `pnpm run dev`
+
+pnpm i @react-oauth/google
+
+
+check this: <https://ui.shadcn.com/docs/components/data-table>
+
+
+## useful
+
+* <https://blog.logrocket.com/guide-adding-google-login-react-app/>
+* <https://ui.shadcn.com/> UI
+* icons: <https://lucide.dev/icons/>
+* <https://flowbite.com>
+* <https://tailwindcss.com/docs/installation>
+
+--------------------------------------------------------------------------------
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -27,19 +51,3 @@ If you are developing a production application, we recommend updating the config
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
 
 ---------------------------------------------------------------
-
-# README
-
-to run: `pnpm run dev`
-
-pnpm i @react-oauth/google
-
-
-check this: <https://ui.shadcn.com/docs/components/data-table>
-
-
-## useful
-
-* <https://blog.logrocket.com/guide-adding-google-login-react-app/>
-* <https://ui.shadcn.com/> UI
-* icons: <https://lucide.dev/icons/>

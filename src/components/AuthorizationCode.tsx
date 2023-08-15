@@ -8,7 +8,6 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import FAQ from './faq';
 import PermissionsForm from './PermissionsForm';
 
-
 /*
 0. user arrives on page
 1. user clicked the button
@@ -83,13 +82,9 @@ export default function AuthorizationCodeFlow() {
         buttonContent = (<><Check className="mr-4" /> Signed in</>)
     }
 
-    const savePermissions = () => {
-        setStep(4);
-    }
-
     return (
         <>
-            <h1 className="text-3xl font-bold underline underline-offset-8 mb-5 text-center">Tell the world if they can react to your videos</h1>
+            <h1 className="text-3xl lg:text-4xl font-extrabold  my-10 text-center">Tell the world if they can react to your videos</h1>
             <FAQ />
             <ol className="relative text-gray-900 dark:text-gray-200 border-l border-gray-200 dark:border-gray-700 mt-10" >
                 <li className="mb-10 ml-6">

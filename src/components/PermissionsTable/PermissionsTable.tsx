@@ -10,7 +10,16 @@ async function getData(): Promise<YoutuberPermissions[]> {
             throw new Error('Network response was not ok');
         }
 
-        let res = await response.json();
+        // I shouldn't have to do this, need to fix backend, too lazy rn
+        const res = await response.json();
+        res.forEach((row: YoutuberPermissions) => {
+            if (row.can_react_live !== "yes_with_delay") {
+                row.live_reaction_delay = null;
+            }
+            if (row.can_upload_reaction !== "yes_with_delay") {
+                row.upload_reaction_delay = null;
+            }
+        });
         console.log(res);
         return res;
 
