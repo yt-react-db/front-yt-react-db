@@ -2,7 +2,40 @@ import { YoutuberPermissions, columns } from "./columns"
 import { DataTable } from "./data-table"
 import { useQuery } from "@tanstack/react-query";
 
+function parseDelay(delay: string | null) {
 
+    if (delay === null) return "";
+
+    const pattern = /^(\d+)([a-zA-Z]+)$/;
+    const match = delay.match(pattern);
+
+    if (match) {
+        const value = parseInt(match[1]);
+        let unit;
+        switch (match[2]) {
+            case "h":
+                unit = "hour";
+                break;
+            case "d":
+                unit = "day";
+                break;
+            case "w":
+                unit = "week";
+                break;
+            case "m":
+                unit = "month";
+                break;
+            case "y":
+                unit = "year";
+                break;
+        }
+        return `${value}-${unit}`;
+    } else {
+        console.error("Failed to parse delay");
+        return "";
+    }
+
+}
 async function getData(): Promise<YoutuberPermissions[]> {
     try {
         const response = await fetch("http://localhost:8080/permissions/full_list");
@@ -13,11 +46,11 @@ async function getData(): Promise<YoutuberPermissions[]> {
         // I shouldn't have to do this, need to fix backend, too lazy rn
         const res = await response.json();
         res.forEach((row: YoutuberPermissions) => {
-            if (row.can_react_live !== "yes_with_delay") {
-                row.live_reaction_delay = null;
+            if (row.can_react_live == "yes_with_delay") {
+                row.can_react_live = `yes with a ${parseDelay(row.live_reaction_delay)} delay`;
             }
-            if (row.can_upload_reaction !== "yes_with_delay") {
-                row.upload_reaction_delay = null;
+            if (row.can_upload_reaction == "yes_with_delay") {
+                row.can_upload_reaction = `yes with a ${parseDelay(row.upload_reaction_delay)} delay`;
             }
         });
         console.log(res);

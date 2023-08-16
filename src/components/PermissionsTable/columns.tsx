@@ -3,18 +3,20 @@
 import { ColumnDef } from "@tanstack/react-table"
 
 // This type is used to define the shape of our data.
-// You can use a Zod schema here if you want.
+// should probably define 2 types, on for receiving data & the other for columns
+// since I am going to merge can_react_live + live_reaction_delay (same for upload)
 export type YoutuberPermissions = {
 
     channel_id: string
     channel_title: string,
-    can_react_live: "yes" | "yes_with_delay" | "no",
+    can_react_live: "yes" | "yes_with_delay" | "no" | string,
     live_reaction_delay: string | null,
-    can_upload_reaction: "yes" | "yes_with_delay" | "no",
+    can_upload_reaction: "yes" | "yes_with_delay" | "no" | string,
     upload_reaction_delay: string | null,
     last_upload_time: string,
 
 }
+
 
 export const columns: ColumnDef<YoutuberPermissions>[] = [
     {
@@ -30,16 +32,8 @@ export const columns: ColumnDef<YoutuberPermissions>[] = [
         header: "Can react live?",
     },
     {
-        accessorKey: "live_reaction_delay",
-        header: "Live reaction delay",
-    },
-    {
         accessorKey: "can_upload_reaction",
-        header: "Can upload reaction",
-    },
-    {
-        accessorKey: "upload_reaction_delay",
-        header: "Upload reaction delay",
+        header: "Can upload reaction?",
     },
     {
         accessorKey: "last_updated_at",
