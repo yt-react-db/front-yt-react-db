@@ -21,6 +21,8 @@ interface DataTableProps<TData, TValue> {
     data: TData[]
 }
 
+import { Link } from "react-router-dom";
+
 export function DataTable<TData, TValue>({
     columns,
     data,
@@ -61,7 +63,13 @@ export function DataTable<TData, TValue>({
                             >
                                 {row.getVisibleCells().map((cell) => (
                                     <TableCell key={cell.id}>
-                                        {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                                        {
+                                            cell.column.id === "channel_title"
+                                                ?
+                                                <Link className="hover:underline" to={"https://www.youtube.com/channel/" + row.original.channel_id}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</Link>
+                                                :
+                                                flexRender(cell.column.columnDef.cell, cell.getContext())
+                                        }
                                     </TableCell>
                                 ))}
                             </TableRow>

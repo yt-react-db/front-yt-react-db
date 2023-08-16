@@ -20,12 +20,8 @@ export type YoutuberPermissions = {
 
 export const columns: ColumnDef<YoutuberPermissions>[] = [
     {
-        accessorKey: "channel_id",
-        header: "ID",
-    },
-    {
         accessorKey: "channel_title",
-        header: "Channel's Name",
+        header: "Channel",
     },
     {
         accessorKey: "can_react_live",
