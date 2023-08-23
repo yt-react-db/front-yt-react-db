@@ -19,6 +19,7 @@ check this: <https://ui.shadcn.com/docs/components/data-table>
 * icons: <https://lucide.dev/icons/>
 * <https://flowbite.com>
 * <https://tailwindcss.com/docs/installation>
+* <https://www.npmjs.com/package/react-ga4>
 
 --------------------------------------------------------------------------------
 
