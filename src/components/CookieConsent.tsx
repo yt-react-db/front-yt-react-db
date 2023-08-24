@@ -79,7 +79,7 @@ export default function CookieConsent() {
                         yt-react-db uses cookies and other tracking technologies (google analytics) to analyze traffic and to understand where our visitors are coming from.
                     </p>
                     <p className="text-base leading-relaxed text-gray-400">
-                        Check the <Link to="/privacy-policy" className="underline">privacy policy</Link> to know more.
+                        Check the <Link to="/privacy_policy" className="underline">privacy policy</Link> to know more.
                     </p>
                 </div>
 

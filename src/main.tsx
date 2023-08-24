@@ -15,6 +15,7 @@ import {
 import AuthorizationCodeFlow from './components/AuthorizationCode.tsx'
 import About from './components/About.tsx'
 import Root from './components/Root.tsx'
+import PrivacyPolicy from './components/PrivacyPolicy.tsx'
 
 const queryClient = new QueryClient()
 
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
       {
         path: "/set_permissions_flow",
         element: <AuthorizationCodeFlow />
+      },
+      {
+        path: "/privacy_policy",
+        element: <PrivacyPolicy />
       }
     ]
   },
