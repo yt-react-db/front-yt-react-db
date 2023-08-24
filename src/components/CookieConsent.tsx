@@ -1,37 +1,57 @@
 import { useEffect, useState } from "react";
-import ReactGA from "react-ga4";
 import { Link } from "react-router-dom";
 
-const GA_MEASUREMENT_ID = "G-ZJHNRRQ0SX";
-
 // the 1 is for future updates, so we can increment and now when we have old consent
+// ❗if you update its value, update the one in index.html
 const COOKIE_CONSENT_LOCALSTORAGE_KEY = "yt-react-db_cookie_consent_1";
 const I_CONSENT_TO_COOKIES = "y";
 const I_DO_NOT_CONSENT_TO_COOKIES = "n";
 
+/**
+ * gtag function used to interact with Google Tag Manager
+ */
+// eslint-disable-next-line no-inner-declarations
+function gtag() {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    const dataLayer = window.dataLayer || [];
+    console.log(dataLayer)
+    // eslint-disable-next-line prefer-rest-params
+    dataLayer.push(arguments);
+}
+
 
 export default function CookieConsent() {
     const [isOpened, setIsOpened] = useState(false);
-    // 1. check if already gave permission
-    // 2. if already then do the thing
-    // 3. if not then do the other thing
 
-
+    // should move this logic inside index.html
     useEffect(() => {
 
         const storedCookieConsent = localStorage.getItem(COOKIE_CONSENT_LOCALSTORAGE_KEY);
         if (storedCookieConsent === null) {
             setIsOpened(true);
         } else if (storedCookieConsent === I_CONSENT_TO_COOKIES) {
-            ReactGA.initialize(GA_MEASUREMENT_ID);
+
+            // update Google Tag Manager consent
+
+            // @ts-ignore
+            gtag("consent", "update", {
+                "ad_storage": "granted",
+                "analytics_storage": "granted",
+            });
+
         }
+        // else already denied by default
 
     }, []);
 
 
     const onAccept = () => {
-        // is that enough? (we'll see when it's online)
-        ReactGA.initialize(GA_MEASUREMENT_ID);
+        // @ts-ignore
+        gtag("consent", "update", {
+            "ad_storage": "granted",
+            "analytics_storage": "granted",
+        });
         localStorage.setItem(COOKIE_CONSENT_LOCALSTORAGE_KEY, I_CONSENT_TO_COOKIES);
         setIsOpened(false);
     };

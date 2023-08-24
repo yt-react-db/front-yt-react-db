@@ -53,7 +53,6 @@ async function getData(): Promise<YoutuberPermissions[]> {
                 row.can_upload_reaction = `yes with a ${parseDelay(row.upload_reaction_delay)} delay`;
             }
         });
-        console.log(res);
         return res;
 
     } catch (error) {

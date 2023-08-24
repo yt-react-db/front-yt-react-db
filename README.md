@@ -21,6 +21,20 @@ check this: <https://ui.shadcn.com/docs/components/data-table>
 * <https://tailwindcss.com/docs/installation>
 * <https://www.npmjs.com/package/react-ga4>
 
+
+## Google Tag Manager (GTM)
+
+Uses GTM for Google Analytics 4 (maybe for AdSense later).
+By default consent (ad_storage, analytics_storage) are "denied" (so no cookies).
+First time: show CookieConsent banner, store info in local storage, and update
+or not GTM consent.
+
+GTM scripts are inside ./index.html, the default consent is also in it.
+Consent banner is in src/components/CookieConsent.tsx
+(I put the localstorage logic inside CookieConsent.tsx, I should also put it
+inside index.html, to set up properly gtag right from the start, but I don't want
+to split the logic, don't want to have to deal with this)
+
 --------------------------------------------------------------------------------
 
 # React + TypeScript + Vite
