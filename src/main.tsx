@@ -16,6 +16,7 @@ import AuthorizationCodeFlow from './components/AuthorizationCode.tsx'
 import About from './components/About.tsx'
 import Root from './components/Root.tsx'
 import PrivacyPolicy from './components/PrivacyPolicy.tsx'
+import TermsAndConditions from './components/TermsConditions.tsx'
 
 const queryClient = new QueryClient()
 
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
       {
         path: "/privacy_policy",
         element: <PrivacyPolicy />
+      },
+      {
+        path: "/terms_and_conditions",
+        element: <TermsAndConditions />
       }
     ]
   },
