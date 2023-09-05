@@ -2,7 +2,7 @@ import { useGoogleLogin } from '@react-oauth/google';
 import jwt_decode from "jwt-decode";
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
-import { Youtube, Check, AlertTriangle } from "lucide-react";
+import { Youtube, Check, AlertTriangle, Cross, CrossIcon, XCircle } from "lucide-react";
 import { ReloadIcon } from "@radix-ui/react-icons"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import FAQ from './faq';
@@ -33,6 +33,7 @@ export default function AuthorizationCodeFlow() {
             // check if users gave consent
             if (!scopes.includes("youtube.readonly")) {
                 console.error('Scope "youtube.readonly" is missing"');
+                setStep(-2);
                 return;
             }
 
@@ -88,8 +89,13 @@ export default function AuthorizationCodeFlow() {
             <FAQ />
             <ol className="relative text-gray-900 dark:text-gray-200 border-l border-gray-200 dark:border-gray-700 mt-10" >
                 <li className="mb-10 ml-6">
-                    <span className={(step >= 2 ? "bg-green-200 dark:bg-green-900 " : "bg-gray-100 dark:bg-gray-700") + " absolute flex items-center justify-center w-8 h-8 rounded-full -left-4 ring-4 ring-white dark:ring-gray-900"}>
-                        {step >= 2 ? <Check /> : (step == 0 ? (1) : <ReloadIcon className="animate-spin" />)}
+                    <span className={
+                        (step >= 2 ? "bg-green-200 dark:bg-green-900 " : (step < 0) ? "bg-red-100 dark:bg-red-600" : "bg-gray-100 dark:bg-gray-700") + " absolute flex items-center justify-center w-8 h-8 rounded-full -left-4 ring-4 ring-white dark:ring-gray-900"
+                    }>
+                        {step >= 2 && <Check />}
+                        {step == 0 && (1)}
+                        {step < 2 && step > 0 && <ReloadIcon className="animate-spin" />}
+                        {step < 0 && <XCircle />}
                     </span>
                     <h3 className="text-left font-medium text-lg mb-5">Sign in with Google and consent to show your Channel Name & ID</h3>
                     <Alert className='border-red-600 dark:border-yellow-400'>
@@ -106,6 +112,15 @@ export default function AuthorizationCodeFlow() {
                             {buttonContent}
                         </Button>
                     </div>
+                    {step === -2 && (
+
+                        <div className="text-red-600 text-lg">
+                            <XCircle />
+                            You need to give your consent to access to your youtube read-only information.
+                            <br />
+                            Please try again by reloading the page!
+                        </div>
+                    )}
 
                 </li>
 
