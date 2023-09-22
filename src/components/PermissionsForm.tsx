@@ -27,7 +27,7 @@ import { useState } from "react";
 
 
 const PermissionsEnum = z.enum(["yes", "yes_with_delay", "no"]);
-const DelayUnitEnum = z.enum(["h", "d", "w", "m", "y"]); // hours, days, weeks...
+const DelayUnitEnum = z.enum(["d", "w", "m", "y"]); // days, weeks, months...
 
 const formSchema = z.object({
     can_react_live: PermissionsEnum,
@@ -155,7 +155,6 @@ export default function PermissionsForm({ channelInfo, setStep }: props) {
                                             </SelectTrigger>
                                         </FormControl>
                                         <SelectContent>
-                                            <SelectItem value="h">hour(s)</SelectItem>
                                             <SelectItem value="d">day(s)</SelectItem>
                                             <SelectItem value="w">week(s)</SelectItem>
                                             <SelectItem value="m">month(s)</SelectItem>
@@ -223,7 +222,6 @@ export default function PermissionsForm({ channelInfo, setStep }: props) {
                                             </SelectTrigger>
                                         </FormControl>
                                         <SelectContent>
-                                            <SelectItem value="h">hour(s)</SelectItem>
                                             <SelectItem value="d">day(s)</SelectItem>
                                             <SelectItem value="w">week(s)</SelectItem>
                                             <SelectItem value="m">month(s)</SelectItem>
