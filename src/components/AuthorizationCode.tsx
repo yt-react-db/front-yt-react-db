@@ -2,7 +2,7 @@ import { useGoogleLogin } from '@react-oauth/google';
 import jwt_decode from "jwt-decode";
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
-import { Youtube, Check, AlertTriangle, Cross, CrossIcon, XCircle } from "lucide-react";
+import { Youtube, Check, AlertTriangle, XCircle } from "lucide-react";
 import { ReloadIcon } from "@radix-ui/react-icons"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import FAQ from './faq';
@@ -37,7 +37,7 @@ export default function AuthorizationCodeFlow() {
                 return;
             }
 
-            fetch("http://localhost:8080/get_the_juice", {
+            fetch(import.meta.env.VITE_BACKEND_URL + "/get_the_juice", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

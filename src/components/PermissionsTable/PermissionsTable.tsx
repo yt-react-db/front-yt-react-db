@@ -38,7 +38,7 @@ function parseDelay(delay: string | null) {
 }
 async function getData(): Promise<YoutuberPermissions[]> {
     try {
-        const response = await fetch("http://localhost:8080/permissions/full_list");
+        const response = await fetch(import.meta.env.VITE_BACKEND_URL + "/permissions/full_list");
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }

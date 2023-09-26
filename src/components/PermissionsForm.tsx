@@ -78,7 +78,7 @@ export default function PermissionsForm({ channelInfo, setStep }: props) {
         setStep(4);
         setLeState(2);
         try {
-            const res = await fetch("http://localhost:8080/set_permissions", {
+            const res = await fetch(import.meta.env.VITE_BACKEND_URL + "/set_permissions", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
