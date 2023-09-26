@@ -31,7 +31,7 @@ const router = createBrowserRouter([
 
       },
       {
-        path: "/set_permissions_flow",
+        path: "/set-permissions-flow",
         element: <AuthorizationCodeFlow />
       },
       {
@@ -39,19 +39,11 @@ const router = createBrowserRouter([
         element: <About />
       },
       {
-        path: "/set_permissions_flow",
-        element: <AuthorizationCodeFlow />
-      },
-      {
-        path: "/set_permissions_flow",
-        element: <AuthorizationCodeFlow />
-      },
-      {
-        path: "/privacy_policy",
+        path: "/privacy-policy",
         element: <PrivacyPolicy />
       },
       {
-        path: "/terms_and_conditions",
+        path: "/terms-and-conditions",
         element: <TermsAndConditions />
       }
     ]

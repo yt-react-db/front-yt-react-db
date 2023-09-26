@@ -15,7 +15,7 @@ export default function Nav() {
             </NavLink>
         </div>
         <div className="flex-auto hover:underline">
-            <NavLink to="/set_permissions_flow">
+            <NavLink to="/set-permissions-flow">
                 Youtuber?
             </NavLink>
         </div>

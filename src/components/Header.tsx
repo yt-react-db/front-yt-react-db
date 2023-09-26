@@ -16,7 +16,7 @@ export default function Header() {
                     Collecting permissions from YouTubers to react to their content live and/or upload the reactions on YouTube!
                 </p>
                 <p>
-                    <span className="font-bold">Are you a <Link to="/set_permissions_flow" className="text-red-500 hover:underline">Youtuber?</Link></span> <Link className="hover:underline italic" to="/set_permissions_flow">Tell us if we can react to your content</Link>
+                    <span className="font-bold">Are you a <Link to="/set-permissions-flow" className="text-red-500 hover:underline">Youtuber?</Link></span> <Link className="hover:underline italic" to="/set-permissions-flow">Tell us if we can react to your content</Link>
                 </p>
             </div>
         </header >
