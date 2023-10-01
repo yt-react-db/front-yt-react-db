@@ -16,11 +16,29 @@ check this: <https://ui.shadcn.com/docs/components/data-table>
 
 * <https://blog.logrocket.com/guide-adding-google-login-react-app/>
 * <https://ui.shadcn.com/> UI
-* icons: <https://lucide.dev/icons/>
+* icons:
+   * <https://lucide.dev/icons/>
+   * <https://www.radix-ui.com/icons>
 * <https://flowbite.com>
 * <https://tailwindcss.com/docs/installation>
 * <https://www.npmjs.com/package/react-ga4>
 
+
+## Env specific variables
+
+[vite's doc](https://vitejs.dev/guide/env-and-mode.html).
+There are 2 .env files:
+
+- .env.development
+- .env.production
+
+nothing secret
+
+Start env variables with `VITE_<NAME>` then use `import.meta.env.VITE_<NAME>`.
+
+By default, the dev server (`dev` command) runs in development mode and the
+`build` command runs in production mode.
+`vite build` will load `.env.production`, while `dev` will load `.env.development`.
 
 ## Google Tag Manager (GTM)
 
