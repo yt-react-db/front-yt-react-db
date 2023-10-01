@@ -8,6 +8,17 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import FAQ from './faq';
 import PermissionsForm from './PermissionsForm';
 
+type ChannelInfoType = null | {
+    token: string,
+    id: string,
+    title: string,
+};
+
+type TokenType = {
+    channel_id: string,
+    channel_title: string,
+}
+
 /*
 0. user arrives on page
 1. user clicked the button
@@ -18,7 +29,7 @@ import PermissionsForm from './PermissionsForm';
  */
 export default function AuthorizationCodeFlow() {
 
-    const [channelInfo, setChannelInfo] = useState(null);
+    const [channelInfo, setChannelInfo] = useState<ChannelInfoType>(null);
     const [step, setStep] = useState(0);
 
     const login = useGoogleLogin({
@@ -51,7 +62,7 @@ export default function AuthorizationCodeFlow() {
                     }
 
                     setStep(3);
-                    const token = jwt_decode(data.message);
+                    const token: TokenType = jwt_decode(data.message);
                     setChannelInfo({
                         token: data.message,
                         id: token.channel_id,

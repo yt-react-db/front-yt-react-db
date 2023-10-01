@@ -66,6 +66,7 @@ export function DataTable<TData, TValue>({
                                         {
                                             cell.column.id === "channel_title"
                                                 ?
+                                                // @ts-ignore
                                                 <Link className="hover:underline" to={"https://www.youtube.com/channel/" + row.original.channel_id}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</Link>
                                                 :
                                                 flexRender(cell.column.columnDef.cell, cell.getContext())
