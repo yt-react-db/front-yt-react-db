@@ -17,6 +17,7 @@ import About from './components/About.tsx'
 import Root from './components/Root.tsx'
 import PrivacyPolicy from './components/PrivacyPolicy.tsx'
 import TermsAndConditions from './components/TermsConditions.tsx'
+import ExtensionInfo from './components/ExtensionInfo.tsx'
 
 const queryClient = new QueryClient()
 
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
       {
         path: "/terms-and-conditions",
         element: <TermsAndConditions />
+      },
+      {
+        path: "/extension",
+        element: <ExtensionInfo />
       }
     ]
   },
