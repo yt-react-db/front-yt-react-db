@@ -10,7 +10,7 @@ export default function Nav() {
             </NavLink>
         </div>
         <div className="flex-auto hover:underline">
-            <NavLink to="/#extension">
+            <NavLink to="/extension">
                 Extension
             </NavLink>
         </div>
