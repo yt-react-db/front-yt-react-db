@@ -5,11 +5,11 @@ export default function PrivacyPolicy() {
         <>
             <h1 className="mb-2 text-4xl font-semibold text-gray-900 dark:text-white">Privacy Policy</h1>
             <br />
-            <p>Last updated: August 24, 2023</p>
+            <p>Last update: October 13, 2023</p>
             <br />
             <h2 className="mb-2 text-lg font-semibold text-gray-900 dark:text-white underline">TL;DR</h2>
             <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
-                <li>Data collected: Channel Title, Channel ID, and permissions (which are public information)</li>
+                <li>Data collected: Channel Title, Channel ID, Custom URL and permissions (which are public information)</li>
                 <li>By using yt-react-db you consent to let us use that data</li>
                 <li>yt-react-db uses "Google Tag Manager" to access "Google Analytics 4" which uses cookies to know about traffic on the website. You can deny the use of these cookies (they are denied by default)</li>
                 <li>yt-react-db uses Google Authorization code flow</li>
@@ -74,6 +74,7 @@ export default function PrivacyPolicy() {
             <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
                 <li>Youtube channel's title (name) (public information)</li>
                 <li>Youtube channel's ID (public information)</li>
+                <li>Youtube channel's custom URL (public information)</li>
                 <li>Usage Data</li>
             </ul>
             <h3 className="mb-2 text-md underline">Usage Data</h3>
@@ -195,7 +196,7 @@ export default function PrivacyPolicy() {
             <p>If you have any questions about this Privacy Policy, You can contact us:</p>
             <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
                 <li>By email: yt.react.db@gmail.com</li>
-                <li>On X (twitter): ComputerBread</li>
+                <li>On X (twitter): <a href="https://twitter.com/ComputerBread" className="hover:underline">ComputerBread</a></li>
             </ul>
             <span className="text-xs text-orange-500">(Ok, not too bad)</span>
         </>

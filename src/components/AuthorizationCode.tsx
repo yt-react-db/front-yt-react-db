@@ -12,11 +12,13 @@ type ChannelInfoType = null | {
     token: string,
     id: string,
     title: string,
+    customUrl: string,
 };
 
 type TokenType = {
     channel_id: string,
     channel_title: string,
+    custom_url: string,
 }
 
 /*
@@ -67,6 +69,7 @@ export default function AuthorizationCodeFlow() {
                         token: data.message,
                         id: token.channel_id,
                         title: token.channel_title,
+                        customUrl: token.custom_url,
                     });
 
                 })
@@ -141,13 +144,14 @@ export default function AuthorizationCodeFlow() {
                     </span>
                     <h3 className="text-left font-medium text-lg">Fetching Channel Information</h3>
                     <div className="flex items-center p-5">
-                        Requesting YouTube for your channel name and ID (public information). <br />
+                        Requesting YouTube for your channel name, ID and custom URL (public information). <br />
                         You have nothing to do, just wait a bit, it should be quick.
                     </div>
                     {channelInfo && (
                         <div className="p-5">
                             <p className="font-bold underline">Channel's name:</p><p>{channelInfo.title}</p><br />
-                            <p className="font-bold underline">Channel's ID:</p><p>{channelInfo.id}</p>
+                            <p className="font-bold underline">Channel's ID:</p><p>{channelInfo.id}</p><br />
+                            <p className="font-bold underline">Custom URL:</p><p>{channelInfo.customUrl}</p>
                         </div>)
                     }
                 </li>

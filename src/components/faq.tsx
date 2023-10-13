@@ -18,7 +18,7 @@ export default function FAQ() {
                 <AccordionTrigger>Do you collect sensitive personal data?</AccordionTrigger>
                 <AccordionContent>
                     No.<br /><br />
-                    We only collect your YouTube channel's name & ID, which are public information anyone can find. <br />
+                    We only collect your YouTube channel's name, ID and custom URL, which are public information anyone can find. <br />
                     Our server never sees your email address or any other personal information.<br /><br />
                     Don't believe it? <a className="underline hover:text-gray-500" href="https://github.com/orgs/yt-react-db/repositories">Check the source code on GitHub</a>
                 </AccordionContent>
