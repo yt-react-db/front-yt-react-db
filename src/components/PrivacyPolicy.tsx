@@ -5,12 +5,13 @@ export default function PrivacyPolicy() {
         <>
             <h1 className="mb-2 text-4xl font-semibold text-gray-900 dark:text-white">Privacy Policy</h1>
             <br />
-            <p>Last update: October 13, 2023</p>
+            <p>Last update: November 6, 2023</p>
             <br />
             <h2 className="mb-2 text-lg font-semibold text-gray-900 dark:text-white underline">TL;DR</h2>
             <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
                 <li>Data collected: Channel Title, Channel ID, Custom URL and permissions (which are public information)</li>
-                <li>By using yt-react-db you consent to let us use that data</li>
+                <li>By using yt-react-db you consent to let us store, use and display that data</li>
+                <li>yt-react-db’s use and transfer to any other app of information received from Google APIs will adhere to <a className="underline hover:text-gray-500" href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</li>
                 <li>yt-react-db uses "Google Tag Manager" to access "Google Analytics 4" which uses cookies to know about traffic on the website. You can deny the use of these cookies (they are denied by default)</li>
                 <li>yt-react-db uses Google Authorization code flow</li>
                 <li>yt-react-db doesn't use cookies otherwise</li>
@@ -81,6 +82,8 @@ export default function PrivacyPolicy() {
             <p>We use Google Tag Manager with <a href="https://support.google.com/analytics/answer/9976101?hl=en">Consent mode</a>.
                 When first visiting the Website, You will be prompted with a "cookie consent banner". The choice you make will change the behavior of Analytics, Ads and third-party tags that create or read cookies. <span className="text-xs text-orange-500">(we only use GA4 for now)</span></p>
             <p>Usage Data can be collected by Google Analytics 4 through Google Tag Manager when using the Service, after giving consent.</p>
+            <br />
+            <p>yt-react-db’s use and transfer to any other app of information received from Google APIs will adhere to <a className="underline hover:text-gray-500" href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
             <br />
             <span className="text-xs text-orange-500">(note the use of "may", and "We" really isn't "me" more like "google analytics")</span>
             <p>Usage Data may include information such as Your Device's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that You visit, the time and date of Your visit, the time spent on those pages, unique device identifiers and other diagnostic data.</p>

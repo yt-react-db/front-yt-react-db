@@ -111,7 +111,7 @@ export default function AuthorizationCodeFlow() {
                         {step < 2 && step > 0 && <ReloadIcon className="animate-spin" />}
                         {step < 0 && <XCircle />}
                     </span>
-                    <h3 className="text-left font-medium text-lg mb-5">Sign in with Google and consent to show your Channel Name & ID</h3>
+                    <h3 className="text-left font-medium text-lg mb-5">Sign in with Google and consent to share your Channel Name, Channel ID, and Custom URL</h3>
                     <Alert className='border-red-600 dark:border-yellow-400'>
                         <AlertTriangle fill={"yellow"} color="black" />
                         <AlertTitle className="text-red-600 text-lg dark:text-yellow-300 font-bold underline underline-offset-4">Warning!</AlertTitle>

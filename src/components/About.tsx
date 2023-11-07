@@ -1,5 +1,5 @@
 import { Github, Twitter, Youtube } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export default function About() {
     return (
@@ -37,6 +37,30 @@ export default function About() {
                 has a positive (discoverability? algorithm boost? free exposure? ...)
                 or negative impact (cannibalism? monetization? ...).
 
+            </p>
+            <div id="explained" className="my-8">
+                <h2 className="mb-2 text-lg font-semibold text-gray-900 dark:text-white">yt-react-db explained to a 5-year-old</h2>
+            </div>
+            <p>
+                Imagine the following situation:<br />
+                <br />
+                Jimmy makes videos on YouTube.<br />
+                Felix is a live streamer on Twitch.<br />
+                Felix wants to watch Jimmy’s videos live on Twitch.<br />
+                But before watching Jimmy’s videos, Felix asks Jimmy if he (Felix) can watch his (Jimmy) videos.<br />
+                Jimmy answers: Yes, no problem, go ahead!<br />
+                <br />
+                Now, Olivia, Ruby, Emily, Jessica, Peter, Steven, Bob, Kate, Jean-Paul, Marty, Michael and more are live streamers or YouTubers, they want to watch Jimmy’s videos. So each of them send an email to Jimmy.<br />
+                Jimmy sees that he has 20349391314 new emails.<br />
+                Instead of answering them all, he decides to go to <a className="underline" href="https://yt-react-db.com">https://yt-react-db.com</a>.<br />
+                He clicks on “Youtuber” in the navigation bar which leads him to <NavLink className="underline" to="/set-permissions-flow">https://yt-react-db.com/set-permissions-flow</NavLink><br />
+                He clicks on the "Sign in with Google" button, select his YouTube Channel, consent to let yt-react-db access his YouTube Channel's name, ID and custom URL and give his permissions.
+                <br />
+                <br />
+                Why does Jimmy need to sign in? To make sure he doesn’t make mistake when giving his information and to avoid any bad actor from pretending being him (Jimmy).
+                <br />
+                <br />
+                Now, Olivia, Ruby, Emily, Jessica, Peter, Steven, Bob, Kate, Jean-Paul, Marty, Michael and more can go to <NavLink className="underline" to="/">yt-react-db.com</NavLink> and see if they can react to Jimmy's videos!
             </p>
             <div id="contact" className="my-8">
                 <h2 className="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Contact</h2>
