@@ -1,7 +1,7 @@
 import { useGoogleLogin } from '@react-oauth/google';
 import jwt_decode from "jwt-decode";
 import { useState } from 'react';
-import { Youtube, Check, AlertTriangle, XCircle } from "lucide-react";
+import { Check, AlertTriangle, XCircle } from "lucide-react";
 import { ReloadIcon } from "@radix-ui/react-icons"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import FAQ from './faq';
